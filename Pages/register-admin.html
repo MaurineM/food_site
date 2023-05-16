@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- from the other -->
+    <link rel="stylesheet" type="text/css" href="../vendors/css/node_modules/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../vendors/css/grid.css">
+	<link rel="stylesheet" type="text/css" href="../vendors/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="../vendors/css/ionicons.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="../resources/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="../resources/css/queries.css">
+    <!-- end -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+	<script type="module" src="./Pages/js/cookies.js"></script>
+
+    <title>Document</title>
+</head>
+<body >
+    <!-- nav -->
+    <header style="height:125vh;">
+		<nav>
+			<div class="row" style="margin-left: 30%;"> <!-- Keep within 1140px width -->
+				
+				<ul class="main-nav js--main-nav" >  
+					<li><a href="../index.html" class="active">Home</a></li>
+					<li><a href="../index.html#cities">Locations</a></li>
+					<li><a href="#">About Us</a></li>
+					
+				</ul>
+				<a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a> <!-- No href -->
+			</div>
+		</nav>
+        <!-- end nav -->
+
+	<section >
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title">Admin Register</h4>
+						
+								<div class="form-group">
+									<label for="email">E-Mail Address</label>
+									<input id="email" type="email" class="form-control" name="email" required>
+									<div class="invalid-feedback">
+										Your email is invalid
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="password">Password</label>
+									<input id="pass1" type="password" class="form-control" name="pass1" required data-eye>
+									<div class="invalid-feedback">
+										Password is required
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="password">Confirm Password</label>
+									<input id="password" type="password" class="form-control" name="password" required data-eye>
+									<div class="invalid-feedback">
+										Password is required
+									</div>
+								</div>
+
+								                                                                             
+								<div class="form-group m-0">
+									
+									<input id="btnSignup" type="submit" class="btn btn-primary btn-block">
+								</div>
+								<div class="mt-4 text-center">
+									Already have an account? <a href="../Loggins.html">Login</a>
+								</div>
+						
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+	<script type="module">
+			// Import the functions you need from the SDKs you need
+			import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+		import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+		import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+		import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+		
+		btnSignup.addEventListener('click', (e) => {
+			//code foreign
+			
+            var email=document.getElementById('email').value;
+		var password=document.getElementById('password').value;
+		var pass2=document.getElementById('pass1').value;
+        if(pass2==password){
+			connect_firebase();
+        } else{
+            alert("Password does not Match"); 
+        }
+
+		});
+		function connect_firebase(){
+		
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
+	  
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+  apiKey: "AIzaSyBq8_avEWsKkt5-3E-x3n_4LwYOvm0bHbQ",
+  authDomain: "carsale-71481.firebaseapp.com",
+  databaseURL: "https://carsale-71481-default-rtdb.firebaseio.com",
+  projectId: "carsale-71481",
+  storageBucket: "carsale-71481.appspot.com",
+  messagingSenderId: "589345975575",
+  appId: "1:589345975575:web:20d38d9813c9e4fc855b52",
+  measurementId: "G-R2G0F9Q9SV"
+};
+	  
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		const analytics = getAnalytics(app);
+		const database = getDatabase();
+		const auth = getAuth();
+
+		
+			
+        var email=document.getElementById('email').value;
+		var password=document.getElementById('password').value;
+		var pass2=document.getElementById('pass1').value;
+			createUserWithEmailAndPassword(auth, email, password)
+	  .then((userCredential) => {
+		// Signed in 
+		const user = userCredential.user;
+		//set reference
+		set(ref(database, 'CafeAdmin/'+ user.uid),{
+			
+			email : email,
+
+		})
+		
+		alert('Admin account Created Cuccessfully');
+		window.location= ("../Loggins.html");
+		// ...
+	  })
+	  .catch((error) => {
+		const errorCode = error.code;
+		const errorMessage = error.message;
+		alert(errorMessage);
+		// ..
+	  });
+	
+		}
+	  </script>
+	 
+	
+	
+
+</html>

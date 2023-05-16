@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="vendors/css/node_modules/normalize.css">
+	<link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+	<link rel="stylesheet" type="text/css" href="vendors/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="resources/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/queries.css">
+	<title>Getfood</title>
+</head>
+<body>
+	
+	<!-- Heading section -->
+
+	<header>
+		<nav>
+			<div class="row"> <!-- Keep within 1140px width -->
+				<ul class="main-nav js--main-nav">  
+					<li><a href="#features" class="active">Services</a></li>
+					<li><a href="#cities">Locations</a></li>
+					<li><a href="#">About Us</a></li>
+					<li><a href="./Loggins.html">Log in</a></li>
+					
+				</ul>
+				<a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a> <!-- No href -->
+			</div>
+		</nav>
+		<div class="hero-text">
+			<h1>Welcome<br> Hello super healthy meals.</h1><br><br>
+			<div class="textbtn" style="text-align: center;">
+			
+			<a class="btn btn-ghost js--scroll-to-start" href="#">Order Food</a>
+		</div>
+		</div>
+	</header>
+	
+	<!-- Features section -->
+	
+	<section class="features js--features" id="features"> <!-- Use for sticky nav activation --> 
+		<div class="row">
+			<h2>Get food fast &mdash; not fast food</h2> <!-- Longer dash + only use one h1, so using h2 -->
+			<p class="long-copy">
+				Hello, we’re Maurine Foods, your new premium food ordering and delivery service. 
+				We know you’re always busy. No time for cooking. So let us take care of that,
+				 we’re really good at it, we promise!
+			</p>
+		</div>
+		<!-- Grid using col -->
+		<div class="row js--wp-1">
+			<div class="col span-1-of-4 box">
+				<!-- Adding icons -->
+				<i class="ion-ios-calendar-outline icon-big"></i>
+				<h3>Up to 365 days/year</h3>
+				<p>Never cook again! We really mean that. Our Services runs all the year long.
+					 You can choose to order more flexibly if that's your style.</p>
+			</div>
+			<div class="col span-1-of-4 box">
+				<i class="ion-ios-stopwatch-outline icon-big"></i>
+				<h3>Ready in 20 minutes</h3>
+				<p>You're only twenty minutes away from your delicious and super healthy meals
+					 delivered right to your home. We work with the best chefs 
+					 to ensure that you're 100% happy.</p>
+			</div>
+			<div class="col span-1-of-4 box">
+				<i class="ion-ios-nutrition-outline icon-big"></i>
+				<h3>100% organic</h3>
+				<p>All our vegetables are fresh, organic and local.
+					 Animals are raised without added hormones or antibiotics. 
+					 Good for your health, the environment, and it also tastes better!</p>
+			</div>
+			<div class="col span-1-of-4 box">
+				<i class="ion-ios-cart-outline icon-big"></i>
+				<h3>Order anything</h3>
+				<p>We don't limit your creativity, 
+					which means you can order whatever you feel like. 
+					You can also choose from our menu containing over 100 delicious meals. 
+					</p>
+			</div>
+		</div>
+	</section>
+	
+	<!-- Meals section -->
+
+	<section class="meals">
+		<!-- First row showcase meals -->
+		<ul class="meals-showcase clearfix"> <!-- Clears it's child li element's floats -->
+			<li>
+				<!-- Contains an image or caption for an image, also use figcaption -->
+				<figure class="meal-photo">
+					<img src="resources/img/1.jpg" alt="Korean bibimbap with egg and vegetables">
+				</figure>
+			</li>
+			<li>
+				<figure class="meal-photo">
+					<img src="resources/img/2.jpg" alt="Simple italian pizza with cherry tomatoes">
+				</figure>
+			</li>
+			<li>
+				<figure class="meal-photo">
+					<img src="resources/img/3.jpg" alt="Chicken breast steak with vegetables">
+				</figure>
+			</li>
+			<li>
+				<figure class="meal-photo">
+					<img src="resources/img/4.jpg" alt="Autumn pumpkin soup">
+				</figure>
+			</li>
+		</ul>
+		<!-- Second row showcase meals -->
+		<ul class="meals-showcase clearfix">
+			<li>
+				<figure class="meal-photo">
+					<img src="resources/img/5.jpg" alt="Paleo beef steak with vegetables">
+				</figure>
+			</li>
+			<li>
+				<figure class="meal-photo">
+					<img src="resources/img/6.jpg" alt="Healthy baguette with egg and vegetables">
+				</figure>
+			</li>
+			<li>
+				<figure class="meal-photo">
+					<img src="resources/img/7.jpg" alt="Burger with cheddar and bacon">
+				</figure>
+			</li>
+			<li>
+				<figure class="meal-photo">
+					<img src="resources/img/8.jpg" alt="Granola with cherries and strawberries">
+				</figure>
+			</li>
+		</ul>
+	</section>
+	
+	
+	
+	<!-- Cities section-->
+
+	<section class="cities" id="cities">
+		<div class="row">
+			<h2>We're currently in these cities</h2>
+		</div>
+		<div class="row js--wp-3">
+			<div class="col span-1-of-4 box">
+				<img src="resources/img/lisbon-3.jpg" alt="Lisbon">
+				<h3>Meru</h3>
+				<div class="city-features">
+					<i class="ion-ios-person icon-small"></i>
+					1600+ happy eaters!
+				</div>
+				<div class="city-features">
+					<i class="ion-ios-star icon-small"></i>
+					60+ top chefs
+				</div>
+				<div class="city-features">
+					<i class="ion-social-twitter icon-small"></i>
+					<a href="#">@MaurineFoods</a>
+				</div>
+			</div>
+			<div class="col span-1-of-4 box">
+				<img src="resources/img/san-francisco.jpg" alt="San Francisco">
+				<h3>Embu</h3>
+				<div class="city-features">
+					<i class="ion-ios-person icon-small"></i>
+					3700+ happy eaters!
+				</div>
+				<div class="city-features">
+					<i class="ion-ios-star icon-small"></i>
+					160+ top chefs
+				</div>
+				<div class="city-features">
+					<i class="ion-social-twitter icon-small"></i>
+					<a href="#">@maurineFoods</a>
+				</div>
+			</div>
+			<div class="col span-1-of-4 box">
+				<img src="resources/img/berlin.jpg" alt="Berlin">
+				<h3>Nairobi</h3>
+				<div class="city-features">
+					<i class="ion-ios-person icon-small"></i>
+					2300+ happy eaters!
+				</div>
+				<div class="city-features">
+					<i class="ion-ios-star icon-small"></i>
+					110+ top chefs
+				</div>
+				<div class="city-features">
+					<i class="ion-social-twitter icon-small"></i>
+					<a href="#">@MaurineFoods</a>
+				</div>
+			</div>
+			<div class="col span-1-of-4 box">
+				<img src="resources/img/london.jpg" alt="London">
+				<h3>Mombasa</h3>
+				<div class="city-features">
+					<i class="ion-ios-person icon-small"></i>
+					1200+ happy eaters!
+				</div>
+				<div class="city-features">
+					<i class="ion-ios-star icon-small"></i>
+					50+ top chefs
+				</div>
+				<div class="city-features">
+					<i class="ion-social-twitter icon-small"></i>
+					<a href="#">@MaurineFoods</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	
+
+
+	<!-- Footer section -->
+
+	<footer>
+		<div class="row">
+			<div class="col span-1-of-2">
+				<ul class="footer-nav">
+					<li>
+						<a href="#">About us</a>
+					</li>
+					<li>
+						<a href="#">Blog</a>
+					</li>
+					<li>
+						<a href="#">Press</a>
+					</li>
+					<li>
+						<a href="#">iOS App</a>
+					</li>
+					<li>
+						<a href="#">Android App</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col span-1-of-2">
+				<ul class="social-icons">
+					<li><a href="#"><i class="ion-social-facebook"></i></a></li>
+					<li><a href="#"><i class="ion-social-twitter"></i></a></li>
+					<li><a href="#"><i class="ion-social-instagram"></i></a></li>
+					<li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<p>Copyright &copy; 2023 by MaurineFoods. All rights reserved.</p>
+		</div>
+	</footer>
+
+	<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+	<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="vendors/js/jquery.waypoints.min.js"></script>
+	<script src="resources/js/scripts.js"></script> <!-- Sticky nav -->
+	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script src="vendors/js/gmaps.js"></script>
+</body>
+</html>

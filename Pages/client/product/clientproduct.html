@@ -1,0 +1,422 @@
+<html>
+
+<head>
+    <title>product view</title>
+    <link href="/css/product.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Pages/css/product.css ">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="/Pages/js/cookies.js"></script>
+</head>
+
+<body>
+    <nav style="top:0;">
+        <ul><a href="#">
+            <img src="/img/food_app_logo.PNG" alt="maurinebestfoods">
+        </a>
+          
+            <li><a href="#" class="active">Meal Description</a>
+            </li>
+            
+            </li>
+        </ul>
+        <div id="logo-img">
+            
+        </div>
+        <ul>
+          
+            
+        </ul>
+        
+        <div id="menu-icon" style="color:white;">
+            <i class="fas fa-bars"></i>
+        </div>
+       
+    </nav>
+    <br><br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+
+                            <!-- Change Img Urls Here-->
+                            <img  id="image"  class="d-block w-100" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img id="image1"  class="d-block w-100" alt="Second slide">
+                        </div>
+
+                        
+                    </div><br>
+                    <span><input id="show"  style="padding: 5px;border: none;"  type="text">  Item(s) in stock</span> 
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+            </div>
+            <div class="col-md-7">
+            <br>
+
+
+             <!-- change ID and Heading here-->
+             <input type="number" id="ID" value="02" style="display: none;">
+
+                <h2 id="title">Product</h2>
+
+
+
+        <br><br>
+                <h3 style="color:blue ;">Meal Information</h3>
+                <h2 id="item"  style="display: none;">kkk</h2>
+
+                    <textarea id="textArea" readonly cols="60" rows="6" placeholder="Type here..."></textarea><br><br>
+                    <p style="font-size: 20px; color: blue;"> <b>Product Price:</b> Ksh <input readonly id="price" type="number" style="width: 100px; font-weight:600;" ></p>
+                      <br> 
+                    <p  style="color:blue ; font-weight: bold; font-size: 20px;">Pieces: <span><button onclick="fMinus()"  id="btnMinus">-</button></span> <input readonly  id="count" value="1" type="number"style="width: 50px; font-weight:600;" default="1" > <span><button onclick="fAdd()" id="btnAdd">+</button></span></p>
+                    <br>
+                    <button class="btnUpdate" id="btnUpdate"  style=" margin-left: 15px; justify-content:center; border-radius:30px ; width: 400px">Place Order</button>
+                <!--    <button type="button" class="cart"> Add to cart</button>-->
+                <div class="form-popup" id="myForm">
+             
+                    <div class="form-container">
+                      <h1 style="text-align: center;">Payment Details</h1>
+                      <label for="location" width="100%"><b>Your Location: </b> <span>
+      
+                        <select name="" autofocus=true style="color: blue;" id="loc" onchange="priceChange()">
+                            <option value="0">Please select...</option>
+                            <option value="30">Meru</option>
+                            <option value="40">Makutano</option>
+                            <option value="50">Nkubu</option>
+                            <option value="60">Nchiru</option>
+                        </select></span></label> 
+                      <p></p>
+                      <label for="fee"  ><b>Delivery Fee: </b></label>
+                      <input id="fee" type="text" default="0" readonly>
+                      <label for="number"><b>Total: </b></label>
+                      <input id="total" type="text" readonly>
+                      <label for="number"><b>Mpesa no: </b></label>
+                      <input type="text" readonly placeholder="07..." id="mnumber" required>
+                  
+                      <input type="text" id="subtotal" style="display: none;">
+                  
+                      <button id="pay" class="btn">Pay</button>
+                      <button type="button" id="closebtn" class="btn cancel" >Close</button>
+                    </div>
+                  </div>
+
+            </div>
+        </div>
+    </div>
+
+<script>
+// location affect price
+
+function priceChange(){
+    document.getElementById("fee").value=document.getElementById("loc").value
+
+    //Total price calculations
+    var price=parseInt(document.getElementById("price").value);
+    var multiple=parseInt(document.getElementById("count").value);
+    var subtotal=price * multiple;
+    document.getElementById("subtotal").value=subtotal;
+    var d_fee=parseInt(document.getElementById("fee").value)
+    var total=subtotal + d_fee;
+    document.getElementById("total").value=total;
+
+}
+  
+    
+
+
+
+
+
+var piece=parseInt(document.getElementById("count").value);
+    
+    function fMinus(){
+        if (piece>1){
+    
+    piece --;
+}
+document.getElementById("count").value=piece;
+    }
+    function fAdd(){
+        var limit=parseInt(document.getElementById("show").value);
+        
+        if (piece<limit){
+            piece++;
+        }
+            
+           
+       
+        
+        document.getElementById("count").value= piece;
+
+    }
+</script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+        import { getDatabase, get,  ref, set,update, remove, child } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+      
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyCkHSF-RrJO-NyQOo4PMf-qWKaIH_966VQ",
+          authDomain: "connect-4b941.firebaseapp.com",
+          databaseURL: "https://connect-4b941-default-rtdb.firebaseio.com",
+          projectId: "connect-4b941",
+          storageBucket: "connect-4b941.appspot.com",
+          messagingSenderId: "256982332852",
+          appId: "1:256982332852:web:46b6ea324d1903bd8e6ee1"
+        };
+      
+         // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+     
+    
+        const db = getDatabase(app);
+    
+        const params = new URLSearchParams(window.location.search);
+const valu = params.get('id');
+const user= params.get('user');
+ 
+        var enterID = valu;
+        //var enterName = document.querySelector("#enterName");
+        //var enterAge = document.querySelector("#enterAge");
+        var price = document.querySelector("#price");
+        var count = document.querySelector("#count");
+        var msg = document.querySelector("#textArea");
+      
+        var countref= document.querySelector("#item");
+        var t_count="";
+        //var insertBtn = document.querySelector("#insert");
+        
+        //var removeBtn = document.querySelector("#remove");
+        //var findBtn = document.querySelector("#find");
+        var showItems= document.querySelector("#show");
+        
+        var image= document.querySelector("#image");
+        var image1= document.querySelector("#image1");
+        var title= document.querySelector("#title");
+          // Assign from Database
+          const dbref = ref(db);
+            var tt_count;
+            var fidName;
+            var imageUrl;
+
+            
+            
+            
+            //open form
+            var btnPop=document.getElementById("btnUpdate");
+            btnPop.addEventListener('click', openForm);
+function openForm() {
+  
+            //query logged in user
+            var phone= document.getElementById("mnumber");
+            get(child(dbref, "People/" + user))
+            .then((snapshot)=>{
+                if(snapshot.exists()){
+                    
+                    phone.value=snapshot.val().Phone;
+                    
+                    
+                }
+            });
+           
+
+  document.getElementById("myForm").style.display = "block";
+
+}
+
+//close form
+var btnclose=document.getElementById("closebtn");
+btnclose.addEventListener('click', closeForm);
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+//----------------------------------------
+
+
+
+
+            get(child(dbref, "foodItem/" + enterID))
+            .then((snapshot)=>{
+                if(snapshot.exists()){
+                    showItems.value = snapshot.val().count;
+                    price.value= snapshot.val().price;
+                    msg.value = snapshot.val().describe;
+                    image.src=snapshot.val().img;
+                    image1.src=snapshot.val().img;
+                    title.innerHTML=snapshot.val().name;
+                    
+                    
+                } else {    
+                    alert("No data found");
+                }
+                
+            })
+            .catch((error)=>{
+                alert(error)
+            })
+
+    
+    
+        function FindData() {
+            var count = document.querySelector("#count").value;
+            const dbref = ref(db);
+            var tt_count;
+            var fidName;
+
+            get(child(dbref, "foodItem/" + enterID.value))
+            .then((snapshot)=>{
+                if(snapshot.exists()){
+                    fidName = snapshot.val().count;
+                    
+                    
+                } else {    
+                    alert("No data found");
+                }
+                var a =parseInt(fidName);
+                if(count=="")
+                {
+                    count=0;
+                }
+                var b =parseInt(count);
+            
+                var result= a + b;
+                update(ref(db, "foodItem/"+ enterID.value),{
+               // Name: enterName.value,
+                id: enterID.value,
+                price: price.value,
+                count: result.toString(),
+                describe: msg.value
+            })
+            .then(()=>{
+                alert("Information Updated successfully");
+                window.location=("../dashboard.html");
+            })
+            .catch((error)=>{
+                alert(error);
+            });
+        
+            })
+            .catch((error)=>{
+                alert(error)
+            })
+           
+
+           
+            
+        }
+//process Payment
+var pay=document.getElementById("pay");
+pay.addEventListener('click', processPay);
+function processPay(){
+    var location=document.getElementById("loc").value;
+    var place;
+    if (location==40){
+        place="Makutano";
+
+    }
+    else if(location==50){
+        place="Nkubu";
+    }
+    else if(location==60){
+        place="Nchiru";
+    }else if(location==30){
+        place="Meru";
+    }
+    else{
+alert("Please select Location");
+return;
+    }
+    
+    var fees=document.getElementById("fee").value;
+    var phone_no=document.getElementById("mnumber").value;
+    var amount=document.getElementById("total").value;
+    var unit=document.getElementById("count").value;
+    var name=document.getElementById("title").innerText;
+    var uprice=document.getElementById("price").value;
+
+
+    //get key value
+    var key;
+    get(child(dbref, "Count/" + "id"))
+            .then((snapshot)=>{
+                if(snapshot.exists()){
+                    key=parseInt(snapshot.val().Id);
+
+                }
+           
+    // insert into the orders tables 
+    var v1=key+1;
+   var subtotal=document.getElementById("subtotal").value;
+    set(ref(db, "Orders/" + v1.toString()),{
+        User: user,
+        Dfee: fees,
+        Phone: phone_no,
+        mealname:name,
+        Pieces: unit,
+        Amount: amount,
+        Location:place,
+        Price: uprice,
+        id: v1.toString(),
+        Subtotal:subtotal,
+        Status: "Active"
+
+    });
+
+
+    //update count
+    update(ref(db, "Count/"+ "id"),{
+                Id: v1.toString()
+                                
+            });
+
+        });
+
+    
+    
+    // M-Pesa Integration
+    var url = "https://tinypesa.com/api/v1/express/initialize";
+
+    fetch(url, {
+    body: 'amount='+amount+'&msisdn='+phone_no+'&account_no=0190177461948',
+    headers: {
+        Apikey: "wJ41YasOMs4",
+        "Content-Type": "application/x-www-form-urlencoded",
+    },
+    method: "POST",
+});
+alert("An stk push has been sent to your phone, enter Mpesa pin to complete the payment");
+
+window.location.href="../orders.html?user="+ user;
+
+    
+}
+
+      </script>
+      <br><br><br>
+</body>
+
+</html>

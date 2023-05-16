@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt</title>
+    <link rel="stylesheet" href="/Pages/css/orderinfo.css">
+</head>
+<body>
+    <table class="body-wrap">
+        <tbody><tr>
+            <td></td>
+            <td class="container" width="600">
+                <div class="content">
+                    <table class="main" width="100%" cellpadding="0" cellspacing="0">
+                        <tbody><tr>
+                            <td class="content-wrap aligncenter">
+                                <table width="100%" cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td class="content-block">
+                                            <h2>Thanks for Ordering with Us</h2>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="content-block">
+                                            <table class="invoice">
+                                                <tbody><tr>
+                                                    <td  style="text-align: center;"><span id="username">Initials</span> <br>Order <span id="no">n#12345 </span> <br> </td> <br>
+                                                </tr>
+                                                <br>
+                                                <tr>
+                                                    <td>
+                                                        <table class="invoice-items" cellpadding="0" cellspacing="0">
+                                                            <tbody><tr>
+                                                                <td >Meal</td>
+                                                                <td id="mealname" class="alignright">$ 20.00</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Pieces</td>
+                                                                <td id="pieces" class="alignright">$ 10.00</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>SubTotal</td>
+                                                                <td id="subtotal" class="alignright">$ 6.00</td>
+                                                            </tr> 
+                                                            <tr>
+                                                                <td>Delivery Address</td>
+                                                                <td id="location" class="alignright">$ 6.00</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Delivery Fee</td>
+                                                                <td id="dfee" class="alignright">$ 6.00</td>
+                                                            </tr>
+                                                            <tr class="total">
+                                                                <td class="alignright" width="80%">Total</td>
+                                                                <td id="total" class="alignright">$ 36.00</td>
+                                                            </tr>
+                                                        </tbody></table>
+                                                    </td>
+                                                </tr>
+                                            </tbody></table>
+                                        </td>
+                                    </tr>
+                                   
+                                    <tr>
+                                        <td class="content-block">
+                                            Company Inc. Maurine Foods @2023.
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <div class="footer">
+                        <table width="100%">
+                            <tbody><tr>
+                                <td class="aligncenter content-block">Questions? Email <a href="mailto:">maurinefoods@gmail.com</a></td>
+                            </tr>
+                        </tbody></table>
+                    </div></div>
+            </td>
+            <td></td>
+        </tr>
+    </tbody></table>
+
+
+
+    <script type="module">
+// firebase congigs
+         // Import the functions you need from the SDKs you need
+         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+         import { getDatabase, ref, set, update, remove, child, get, onValue } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+
+  
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCkHSF-RrJO-NyQOo4PMf-qWKaIH_966VQ",
+    authDomain: "connect-4b941.firebaseapp.com",
+    databaseURL: "https://connect-4b941-default-rtdb.firebaseio.com",
+    projectId: "connect-4b941",
+    storageBucket: "connect-4b941.appspot.com",
+    messagingSenderId: "256982332852",
+    appId: "1:256982332852:web:46b6ea324d1903bd8e6ee1"
+  };
+
+  
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db=getDatabase(app);
+
+  //Get meal id
+  const params = new URLSearchParams(window.location.search);
+const id= params.get('id');
+const dbref=ref(db);
+
+var username=document.getElementById('username');
+var order_no= document.getElementById("no");
+var mealname=document.getElementById("mealname");
+var pieces= document.getElementById("pieces");
+var subtotal = document.getElementById("subtotal");
+var total = document.getElementById("total");
+var dfee= document.getElementById("dfee");
+var location= document.getElementById("location");
+
+
+get(child(dbref, "Orders/" + id))
+            .then((snapshot)=>{
+                if(snapshot.exists()){
+                    order_no.innerHTML=snapshot.val().id;
+                    var user=snapshot.val().User;
+                    mealname.innerHTML=snapshot.val().mealname;
+                    pieces.innerHTML=snapshot.val().Pieces;
+                    subtotal.innerHTML=snapshot.val().Subtotal;
+                    total.innerHTML= "Ksh: " + snapshot.val().Amount;
+                    dfee.innerHTML=snapshot.val().Dfee;
+                    location.innerHTML=snapshot.val().Location;
+
+
+                    username.innerHTML=user.toUpperCase();
+
+                }
+            })
+
+
+
+
+    </script>
+</body>
+</html>

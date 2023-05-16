@@ -1,0 +1,286 @@
+
+  /* Navigation */
+  
+  nav {
+	height: 72px;
+	background: #020a2b;
+	width: 100%;
+	margin-top: 0%;
+	margin-left: 0%;
+	margin: 0;
+	position: fixed;
+	font-family: "Roboto Condensed", sans-serif;
+	font-size: 20px;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 16px 0 0;
+	box-sizing: border-box;
+	z-index: 100;
+  }
+  
+  nav a {
+	padding: 0 32px;
+	color: #eee;
+	transition: 0.4s;
+  }
+  
+  nav a:hover {
+	text-decoration: none;
+	color: red;
+  }
+  
+  nav ul {
+	display: flex;
+	list-style: none;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
+	margin: 0;
+  }
+  
+  .active {
+	color: black;
+  }
+  html,body {
+	height: 100%;
+}
+
+body.my-login-page {
+	background-color: #f7f9fb;
+	font-size: 16px;
+}
+
+.my-login-page .brand {
+	width: 90px;
+	height: 90px;
+	overflow: hidden;
+	border-radius: 50%;
+	margin: 40px auto;
+	box-shadow: 0 4px 8px rgba(0,0,0,.05);
+	position: relative;
+	z-index: 1;
+}
+
+.my-login-page .brand img {
+	width: 100%;
+}
+
+.my-login-page .card-wrapper {
+	width: 400px;
+}
+
+.my-login-page .card {
+	border-color: transparent;
+	box-shadow: 0 4px 8px rgba(0,0,0,.05);
+}
+
+.my-login-page .card.fat {
+	padding: 10px;
+}
+
+.my-login-page .card .card-title {
+	margin-bottom: 30px;
+}
+
+.my-login-page .form-control {
+	border-width: 2.3px;
+}
+
+.my-login-page .form-group label {
+	width: 100%;
+}
+
+.my-login-page .btn.btn-block {
+	padding: 12px 10px;
+}
+
+.my-login-page .footer {
+	margin: 40px 0;
+	color: #888;
+	text-align: center;
+}
+
+@media screen and (max-width: 425px) {
+	.my-login-page .card-wrapper {
+		width: 90%;
+		justify-content: center;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.my-login-page .card.fat {
+		padding: 0;
+	}
+
+	.my-login-page .card.fat .card-body {
+		padding: 15px;
+	}
+}
+
+
+#banner {
+	height: 90vh;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: center;
+	flex-direction: column;
+	background: rgba(0, 0, 0, 0.2) url("/img/food-banner.PNG");
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-blend-mode: overlay;
+	color: white;
+  }
+  #banner1 {
+	  height: 70vh;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  flex-direction: column;
+	  background: rgba(0, 0, 0, 0.2) url("/img/food-banner.PNG");
+	  background-size: cover;
+	  background-attachment: fixed;
+	  background-position: center;
+	  background-blend-mode: overlay;
+	  color: white;
+	}
+  
+  #banner h3 {
+	
+	border-radius: 8px;
+	padding: 0 24px;
+	font-size: 24px;
+  }
+  
+  /* Search Box */
+  
+  #searchbox {
+	position: fixed;
+	right: 0;
+	top: 24px;
+	width: 500px;
+	pointer-events: none;
+	z-index: 50;
+	transition: 0.4s;
+  }
+  
+  #searchbox input {
+	height: 48px;
+	width: 100%;
+  }
+  
+  /* Navigation */
+  
+  nav {
+	height: 72px;
+	background: #0cbb40;
+	width: 100%;
+	margin-top: 0%;
+	margin-left: 0%;
+	margin: 0;
+	position: fixed;
+	font-family: "Roboto Condensed", sans-serif;
+	font-size: 20px;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 16px 0 0;
+	box-sizing: border-box;
+	z-index: 100;
+  }
+  
+  nav a {
+	padding: 0 32px;
+	color: black;
+	text-decoration: none;
+	transition: 0.4s;
+  }
+  
+  nav a:hover {
+	text-decoration: none;
+	color: rgb(187, 216, 24)(217, 255, 0);
+  }
+  
+  nav ul {
+	display: flex;
+	list-style: none;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
+	margin: 0;
+  }
+  
+  .active {
+	color: white;
+  }
+  
+  #logo-img {
+	display: flex;
+	height: 50%;
+	align-items: center;
+	color: white;
+	transition: 0.4s;
+	padding: 3%;
+  }
+  
+  #logo-img img {
+	height: 70px;
+	
+  }
+  .navbar-admin{
+	  left: 0%;
+	  padding: 100px;
+	  
+	  position: fixed;
+	  
+  
+  }
+  
+  
+  
+  #menu-icon {
+	height: 100%;
+	font-size: 28px;
+	padding: 0 4px;
+	color: #eee;
+	display: none;
+	align-items: center;
+  }
+  
+  /* Search Icon */
+  
+  #search-icon {
+	color: white;
+	padding: 0 32px;
+	cursor: pointer;
+	transition: 0.4s;
+  }
+  
+  #search-icon:hover {
+	color: red;
+  }
+  
+  /* Slideout Menu */
+  
+  #slideout-menu {
+	display: none;
+	background:teal;
+	z-index: 100;
+	position: fixed;
+	transition: 0.4s;
+	margin-top: 72px;
+	width: 100%;
+	text-align: center;
+	opacity:0;
+	pointer-events:none;
+  }
+  
+  #slideout-menu input {
+	width: 85%;
+	padding: 8px;
+	font-family: "Roboto Condensed", sans-serif;
+	font-size: 20px;
+	text-align: center;
+  }
+  

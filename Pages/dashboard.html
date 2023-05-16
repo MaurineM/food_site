@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <script src="https://kit.fontawesome.com/8627a7c7f6.js" crossorigin="anonymous"></script>
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="./css/style,.css">
+   
+
+
+  
+
+  
+
+</head>
+<body>
+    <nav style="top:0;left:0;">
+        <div id="logo-img">
+            <a href="#">
+                <img src="/img/food_app_logo.PNG" alt="maurinebestfoods">
+            </a>
+        </div>
+        
+        <div id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+
+            <li>
+                <a id="home" href="#" class="active"><i class="fas fa-home"></i> Dashboard</a>
+            </li>
+            
+            <li>
+                <a href="#"><i class="fas fa-address-card"> </i>About us</a>   
+            </li>
+            <li>
+                <a href="./services/orders.html">Orders</a>   
+            </li>
+            <li>
+                <a id="login" href="./index.html" >Logout</a>
+            </li>
+            
+            
+            <li>
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            <!--
+                <div id="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+  -->
+            </li>
+        </ul>
+    </nav>
+    <!-- Side Navbar implementations-->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/dashboard.html">Home</a>
+        <a href="/services/orders.html">Active Orders</a>
+        <a href="/services/processed.html">Processed Orders</a>
+        <a href="/services/daily-report.html">Reports</a>
+        
+      </div>
+      <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+        </script>
+           
+    <!-- Banner Image-->
+      
+<div id="banner">
+    <h1 id="banner-text">Maurine Foods Admin Site</h1>
+    
+
+   
+</div>
+
+<br>
+    <!--Banner Ends here-->
+    
+<div class="container">
+
+   <h3 class="title"> Meal Details </h3>
+   <h2 class="section-heading">Breakfast Meals </h2>
+    <br><br>
+
+   <div class="products-container">
+
+    <div id="product1" class="product" data-name="p-1" >
+        <h3> Coffee</h3>
+        <input id="id1" type="number" value="1" style="display: none;">
+       <img src="./img/coffeecup.png" width="300px" alt=""><br>
+
+       <p id="derror1"  style="color: red; font-size: 25px; display: none;"  > <i class="fa-regular fa-sensor-triangle-exclamation"></i>
+        Items Are almost Finished. Add more Items !!</p>
+      
+       <p style="justify-content: center;margin-left: 4px; text-align: center; font-size: 20px; 
+       text-align: center;">Ksh: <input style="font-size: 20px; " id="price1" type="text" readonly> </p> 
+
+       <br> <div style="width: 150px; margin-left: 48%; height: 15px; color:red ">
+        <span> <input style="color: blue;" id="item1" type="text"></span> 
+       </div> <br>
+       
+    <br>
+    <button id="btnopen" value="01" onclick="openPage(1)"> View Details</a>
+    </button>
+    </div>
+
+<div id="product2" class="product" data-name="p-1" >
+    <h3> Milk</h3>
+  <input id="id2" type="number" value="2" style="display: none;">
+   <img src="./img/milk.png" width="300px" alt=""><br>
+
+   <p id="derror2"  style="color: red; font-size: 25px; display: none;"  > <i class="fa-regular fa-sensor-triangle-exclamation"></i>
+    Items Are almost Finished. Add more Items !!</p>
+   
+   <p style="justify-content: center;margin-left: 1%; text-align: center; font-size: 20px; 
+   text-align: center;">Ksh: <input style="font-size: 20px; " id="price2" type="text" readonly> </p> 
+   <br> <div style="width: 150px; margin-left: 48%; height: 15px; color:red ">
+    <span> <input style="color: blue;" id="item2" type="text"></span> 
+   </div> <br>
+<br>
+<button id="btnopen" value="02" onclick="openPage(2)"> View Details</a>
+</button></a>
+</div>
+
+<!-- product start  -->
+
+<div id="product3" class="product" data-name="p-1" >
+    <h3>Tea</h3>
+    <!-- change product id aand value here  -->
+  <input id="id3" type="number" value="3" style="display: none;">
+   <img src="./img/cuptea.png" width="300px" alt=""><br>
+   <!-- change error id here  -->
+   <p id="derror3"  style="color: red; font-size: 25px; display: none;"  > <i class="fa-regular fa-sensor-triangle-exclamation"></i>
+    Items Are almost Finished. Add more Items !!</p>
+
+    <div style=" text-align: center; font-size: 20px;">  Ksh:<input style="font-size:20px; font-weight: 1000; " id="price3" type="text" readonly> </div> 
+<br>
+       <div style="width: 150px; margin-left: 48%; height: 15px; color:red ">
+        <span> <input style="color: blue;" id="item3" type="text"></span> 
+       </div> 
+      <br> <br>
+      <button id="btnopen" value="03" onclick="openPage(3)"> View Details</a>
+      </button></a>
+</div>
+<!-- product ends -->
+
+<div id="product4" class="product" data-name="p-1" >
+    <h3> Andazi</h3>
+  <input id="id4" type="number" value="4" style="display: none;">
+   <img src="./img/Andazi.jpg" width="300px" alt=""><br>
+
+   <p id="derror4"  style="color: red; font-size: 25px; display: none;"  > <i class="fa-regular fa-triangle-exclamation"></i>
+    Items Are almost Finished. Add more Items !!</p>
+
+   <p style="justify-content: center;margin-left: 1%; text-align: center; font-size: 20px; 
+       text-align: center;">Ksh: <input style="font-size: 20px; " id="price4" type="text" readonly> </p> 
+       <br> <div style="width: 150px; margin-left: 48%; height: 15px; color:red ">
+        <span> <input style="color: blue;" id="item4" type="text"></span> 
+       </div> <br>
+<br>
+<button id="btnopen" value="04" onclick="openPage(4)"> View Details</a>
+</button>
+</a>
+</div>
+
+<div id="product5" class="product" data-name="p-1" >
+    <h3> Kangumu</h3>
+  <input id="id5" type="number" value="5" style="display: none;">
+   <img src="./img/kangumu.png" width="300px" alt=""><br>
+
+   <p id="derror5"  style="color: red; font-size: 25px; display: none;"  > <i class="fa-regular fa-sensor-triangle-exclamation"></i>
+    Items Are almost Finished. Add more Items !!</p>
+
+   <p style="justify-content: center;margin-left: 1%; text-align: center; font-size: 20px; 
+       text-align: center;">Ksh: <input style="font-size: 20px; " id="price5" type="text" readonly> </p> 
+       <br> <div style="width: 150px; margin-left: 48%; height: 15px; color:red ">
+        <span> <input style="color: blue;" id="item5" type="text"></span> 
+       </div> <br>
+<br>
+<button id="btnopen" value="05" onclick="openPage(5)"> View Details</a>
+</button>
+</a>
+</div>
+
+
+<div id="product6" class="product" data-name="p-1" >
+    <h3> Bread</h3>
+  <input id="id6" type="number" value="6" style="display: none;">
+   <img src="./img/bread.png" width="300px" alt=""><br>
+
+   <p id="derror6"  style="color: red; font-size: 25px; display: none;"  > <i class="fa-regular fa-sensor-triangle-exclamation"></i>
+    Items Are almost Finished. Add more Items !!</p>
+
+   <p style="justify-content: center;margin-left: 1%; text-align: center; font-size: 20px; 
+       text-align: center;">Ksh: <input style="font-size: 20px; " id="price6" type="text" readonly> </p> 
+       <br> <div style="width: 150px; margin-left: 48%; height: 15px; color:red ">
+        <span> <input style="color: blue;" id="item6" type="text"></span> 
+       </div> <br>
+<br>
+<button id="btnopen" value="06" onclick="openPage(6)"> View Details</a>
+</button>
+</a>
+</div>
+</div>
+
+<br><br>
+
+<h2 class="section-heading">Other  Meals </h2>
+    <br><br>
+    <br><hr>
+    <div class="products-container">
+
+        <div id="product7" class="product" data-name="p-1" >
+            <h3> A Piece of Ugali </h3>
+          <input id="id7" type="number" value="7" style="display: none;">
+           <img src="./img/ugali.jpg" width="300px" alt=""><br>
+
+           <p id="derror7"  style="color: red; font-size: 25px; display: none;"  > <i class="fa-regular fa-sensor-triangle-exclamation"></i>
+            Items Are almost Finished. Add more Items !!</p>
+           
+           <p style="justify-content: center;margin-left: 1%; text-align: center; font-size: 20px; 
+       text-align: center;">Ksh: <input style="font-size: 20px; " id="price7" type="text" readonly> </p> 
+       <br> <div style="width: 150px; margin-left: 48%; height: 15px; color:red ">
+        <span> <input style="color: blue;" id="item7" type="text"></span> 
+       </div> <br>
+        <br>
+        <button id="btnopen" value="07" onclick="openPage(7)"> View Details</a>
+        </button> </a>
+        </div>
+        
+        <div id="product8" class="product" data-name="p-1" >
+            <h3> Chapatis</h3>
+          <input id="id8" type="number" value="8" style="display: none;">
+           <img src="./img/chapati.jpg" width="300px" alt=""><br>
+
+           <p id="derror8"  style="color: red; font-size: 25px; display: none;"  > <i class="fa-regular fa-sensor-triangle-exclamation"></i>
+            Items Are almost Finished. Add more Items !!</p>
+
+           <p style="justify-content: center;margin-left: 1%; text-align: center; font-size: 20px; 
+       text-align: center;">Ksh: <input style="font-size: 20px; " id="price8" type="text" readonly> </p> 
+       <br> <div style="width: 150px; margin-left: 48%; height: 15px; color:red ">
+        <span> <input style="color: blue;" id="item8" type="text"></span> 
+       </div> <br>
+        <br>
+        <button id="btnopen" value="08" onclick="openPage(8)"> View Details</a>
+        </button>
+      </a>
+        </div>
+
+        <div id="product9" class="product" data-name="p-1" >
+            <h3>A plate of Mchele</h3>
+          <input id="id9" type="number" value="9" style="display: none;">
+           <img src="./img/rice.jpg" width="300px" alt=""><br>
+
+           <p id="derror9"  style="color: red; font-size: 25px; display: none;"  > <i class="fa-regular fa-sensor-triangle-exclamation"></i>
+            Items Are almost Finished. Add more Items !!</p>
+           
+           <p style="justify-content: center;margin-left: 1%; text-align: center; font-size: 20px; 
+       text-align: center;">Ksh: <input style="font-size: 20px; " id="price9" type="text" readonly> </p> 
+       <br> <div style="width: 150px; margin-left: 48%; height: 15px; color:red ">
+        <span> <input style="color: blue;" id="item9" type="text"></span> 
+       </div> <br>
+        <br>
+        <button id="btnopen" value="09" onclick="openPage(9)"> View Details</a>
+        </button> </a>
+        </div>
+
+        <div id="product10" class="product" data-name="p-1" >
+            <h3> Beef</h3>
+          <input id="id10" type="number" value="10" style="display: none;">
+           <img src="./img/beef-fry.jpg" width="300px" alt=""><br>
+
+
+           <p id="derror10"  style="color: red; font-size: 25px; display: none;"  > <i class="fa-regular fa-sensor-triangle-exclamation"></i>
+            Items Are almost Finished. Add more Items !!</p>
+
+           
+           <p style="justify-content: center;margin-left: 1%; text-align: center; font-size: 20px; 
+           text-align: center;">Ksh: <input style="font-size: 20px; " id="price10" type="text" readonly> </p> 
+           <br> <div style="width: 150px; margin-left: 48%; height: 15px; color:red ">
+            <span> <input style="color: blue;" id="item10" type="text"></span> 
+           </div> <br>
+        <br>
+        <button id="btnopen" value="10" onclick="openPage(10)"> View Details</a>
+        </button> </a>
+        </div>
+
+        <div id="product11" class="product" data-name="p-1" >
+            <h3> Greens</h3>
+          <input id="id11" type="number" value="11" style="display: none;">
+           <img src="./img/greens.jpg" width="300px" alt=""><br>
+
+           <p id="derror11"  style="color: red; font-size: 25px; display: none;"  > <i class="fa-regular fa-sensor-triangle-exclamation"></i>
+            Items Are almost Finished. Add more Items !!</p>
+
+           <p style="justify-content: center;margin-left: 1%; text-align: center; font-size: 20px; 
+       text-align: center;">Ksh: <input style="font-size: 20px; " id="price11" type="text" readonly> </p> 
+       <br> <div style="width: 150px; margin-left: 48%; height: 15px; color:red ">
+        <span> <input style="color: blue;" id="item11" type="text"></span> 
+       </div> <br>
+        <br>
+        <button id="btnopen" value="11" onclick="openPage(11)"> View Details</a>
+        </button> </a>
+        </div>
+
+        <div id="product12" class="product" data-name="p-1" >
+            <h3> Cabbage</h3>
+          <input id="id12" type="number" value="12" style="display: none;">
+           <img src="./img/cabbage.png" width="300px" alt=""><br>
+
+           <p id="derror12"  style="color: red; font-size: 25px; display: none;"  > <i class="fa-regular fa-sensor-triangle-exclamation"></i>
+            Items Are almost Finished. Add more Items !!</p>
+           
+           <p style="justify-content: center;margin-left: 1%; text-align: center; font-size: 20px; 
+       text-align: center;">Ksh: <input style="font-size: 20px; " id="price12" type="text" readonly> </p> 
+       <br> <div style="width: 150px; margin-left: 48%; height: 15px; color:red ">
+        <span> <input style="color: blue;" id="item12" type="text"></span> 
+       </div> <br>
+        <br>
+        <button id="btnopen" value="12" onclick="openPage(12)"> View Details</a>
+        </button>
+    </a>
+        </div>
+
+        <div id="product13" class="product" data-name="p-1" >
+            <h3> Githeri</h3>
+          <input id="id13" type="number" value="13" style="display: none;">
+           <img src="./img/githeri.jpg" width="300px" alt=""><br>
+
+           <p id="derror13"  style="color: red; font-size: 25px; display: none;"  > <i class="fa-regular fa-sensor-triangle-exclamation"></i>
+            Items Are almost Finished. Add more Items !!</p>
+
+           <p style="justify-content: center;margin-left: 1%; text-align: center; font-size: 20px; 
+       text-align: center;">Ksh: <input style="font-size: 20px; " id="price13" type="text" readonly> </p> 
+       <br> <div style="width: 150px; margin-left: 48%; height: 15px; color:red ">
+        <span> <input style="color: blue;" id="item13" type="text"></span> 
+       </div> <br>
+        <br>
+        <button id="btnopen" value="13" onclick="openPage(13)"> View Details
+        </button>
+    </a>
+        </div>
+
+        <div id="product14" class="product" data-name="p-1" >
+            <h3> Ndengu</h3>
+          <input id="id14" type="number" value="14" style="display: none;">
+           <img src="./img/ndengu.jpg" width="300px" alt=""><br>
+
+           <p id="derror14"  style="color: red; font-size: 25px; display: none;"  > <i class="fa-regular fa-sensor-triangle-exclamation"></i>
+            Items Are almost Finished. Add more Items !!</p>
+
+           <p style="justify-content: center;margin-left: 1%; text-align: center; font-size: 20px; 
+       text-align: center;">Ksh: <input style="font-size: 20px; " id="price14" type="text" readonly> </p> 
+       <br> <div style="width: 150px; margin-left: 48%; height: 15px; color:red ">
+        <span> <input style="color: blue;" id="item14" type="text"></span> 
+       </div> <br>
+        <br>
+        <button id="btnopen" value="14" onclick="openPage(14)"> View Details
+        </button>
+     </a>
+        </div>
+         
+        
+         
+        
+    </div>
+
+<br><br>
+<br><br>
+        <p style="text-align: right; font-size: 20px; color:rgb(30, 16, 230);">© Copyrights 2023 Maurine Foods | All Rights Reserved</p>
+<br><br>
+    </div>
+</footer>
+
+<script>
+    function openPage(value){
+        var id= document.getElementById("btnopen").value;
+        window.location.href="./product/adminproduct.html?id="+ value;
+    }
+    
+    </script>
+
+<script src="./js/dashboard.js" type="module"></script>
+
+
+</body>
+
+
+</html>

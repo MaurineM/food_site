@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- from the other -->
+    <link rel="stylesheet" type="text/css" href="vendors/css/node_modules/normalize.css">
+	<link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
+	<link rel="stylesheet" type="text/css" href="vendors/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="resources/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/queries.css">
+    <!-- end -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+	<script type="module" src="./Pages/js/cookies.js"></script>
+
+    <title>Document</title>
+</head>
+<body >
+    <!-- nav -->
+    <header>
+		<nav>
+			<div class="row" style="margin-left: 30%;"> <!-- Keep within 1140px width -->
+				
+				<ul class="main-nav js--main-nav" >  
+					<li><a href="./index.html" class="active">Home</a></li>
+					<li><a href="#cities">Locations</a></li>
+					<li><a href="#">About Us</a></li>
+					
+				</ul>
+				<a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a> <!-- No href -->
+			</div>
+		</nav>
+        <!-- end nav -->
+    <div class="sectionforms" style="margin-top: 0;">
+
+        <!-- start admin login  -->
+        <div class="admin" style="float:left; margin-right: 2px; 
+        width: 50%; ">
+           
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					
+					<div class="card fat">
+						<div class="card-body">
+                       
+							<h4 class="card-title" style="text-align: center;">Admin Login</h4>
+							
+								<div class="form-group">
+									<label for="email">E-Mail Address</label>
+									<input id="email1" type="email" class="form-control" name="email" value="" required autofocus>
+									<div class="invalid-feedback">
+										Email is invalid
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="password">Password
+										
+									</label>
+									<input id="password1" type="password" class="form-control" name="password" required data-eye>
+								    <div class="invalid-feedback">
+								    	Password is required
+							    	</div>
+								</div>
+
+								<div class="form-group m-0">
+									<input id="btnLogin1" type="submit" Value="Login" class="btn btn-primary btn-block">
+										
+								</div>
+								<div class="mt-4 text-center">
+									Don't have an account? <a href="./Pages/register-admin.html">Create One</a>
+								
+						
+						</div>
+				
+				</div>
+			</div>
+		</div>
+	</section>
+        </div>
+        <!-- end admin page  -->
+        <!-- client page  -->
+        <div class="client" >
+           
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title" style="text-align: center;">User Login</h4>
+							
+								<div class="form-group">
+									<label for="email">Username</label>
+									<input id="email" type="text" class="form-control"  value="" required autofocus>
+									<div class="invalid-feedback">
+										Email is invalid
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="password">Password
+										
+									</label>
+									<input id="password" type="password" class="form-control" name="password" required data-eye>
+								    <div class="invalid-feedback">
+								    	Password is required
+							    	</div>
+								</div>
+
+								
+								</div>
+
+								<div class="form-group m-0">
+									<input id="btnLogin2" type="submit" Value="Login" class="btn btn-primary btn-block">
+										
+								</div>
+								<div class="mt-4 text-center">
+									Don't have an account? <a href="./Pages/register_user.html">Create One</a>
+								
+							</form>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+        </div>
+    </div>
+    
+</body>
+</html>
